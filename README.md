@@ -1,7 +1,5 @@
 # Home Assistant OpenTelemetry Collector Add-On
 
-<!-- markdownlint-disable-file MD013 -->
-
 This repository can be used as a "blueprint" for add-on development
 to help you get started.
 
@@ -20,6 +18,5 @@ This repository contains the following add-ons
 
 [aarch64-shield]: https://img.shields.io/badge/aarch64-yes-green.svg
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
-[armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
-[armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
+
+<!-- markdownlint-disable-file MD013 -->
