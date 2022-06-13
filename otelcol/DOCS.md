@@ -1,4 +1,6 @@
-# Home Assistant Add-on: Example add-on
+# Home Assistant Add-on: OpenTelemetry collector addon
+
+This AddOn brings the [OpenTelemetry collector](#) to your HomeAssistant.
 
 ## How to use
 

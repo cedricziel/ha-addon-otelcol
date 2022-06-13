@@ -3,18 +3,20 @@ name: OpenTelemetry collector
 version: "0.0.1"
 slug: otelcol
 description: Bring the OpenTelemetry collector into your home
-url: "https://github.com/home-assistant/addons-example/tree/main/example"
+url: "https://github.com/cedricziel/ha-addon-opentelemetry-collector"
+ports:
+  4317/tcp: 4317
+  4318/tcp: 4318
 arch:
-  - armhf
-  - armv7
   - aarch64
   - amd64
-  - i386
 init: false
 map:
   - share:rw
+  - config:rw
+watchdog: http://[HOST]:13133/
 options:
-  message: |
+  config: |
     receivers:
       otlp:
         protocols:
@@ -23,8 +25,7 @@ options:
     processors:
       batch:
     exporters:
-      otlp:
-        endpoint: otelcol:4317
+      logging:
     extensions:
       health_check:
       pprof:
@@ -35,15 +36,15 @@ options:
         traces:
           receivers: [otlp]
           processors: [batch]
-          exporters: [otlp]
+          exporters: [logging]
         metrics:
           receivers: [otlp]
           processors: [batch]
-          exporters: [otlp]
+          exporters: [logging]
         logs:
           receivers: [otlp]
           processors: [batch]
-          exporters: [otlp]
+          exporters: [logging]
 schema:
-  message: "str"
-image: "ghcr.io/home-assistant/{arch}-addon-example"
+  config: "str"
+image: "ghcr.io/cedricziel/{arch}-ha-addon-otelcol"

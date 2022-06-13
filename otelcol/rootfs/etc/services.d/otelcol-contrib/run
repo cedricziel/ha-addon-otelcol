@@ -7,13 +7,12 @@
 # Add your code here
 
 # Declare variables
-declare message
+declare config
 
-## Get the 'message' key from the user config options.
-message=$(bashio::config 'message')
+## Get the 'config' key from the user config options.
+config=$(bashio::config 'config')
 
-## Print the message the user supplied, defaults to "Hello World..."
-bashio::log.info "${message:="Hello World..."}"
+echo "$config" > /tmp/otelcol-config.yaml
 
 ## Run your program
-exec /usr/bin/otelcol-contrib
+exec /usr/bin/otelcol-contrib --config=/tmp/otelcol-config.yaml
