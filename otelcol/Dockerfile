@@ -1,5 +1,5 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
-ARG BUILD_FROM=ghcr.io/home-assistant/aarch64-base:3.13
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/aarch64:6.0.0
 FROM $BUILD_FROM
 
 # Execute during the build of the image

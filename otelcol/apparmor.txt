@@ -28,9 +28,9 @@ profile otelcol flags=(attach_disconnected,mediate_deleted) {
   /data/** rw,
 
   # Start new profile for service
-  /usr/bin/otelcol-contrib cx -> otelcol,
+  /usr/bin/otelcol-contrib cx -> otelcol_contrib,
 
-  profile otelcol flags=(attach_disconnected,mediate_deleted) {
+  profile otelcol_contrib flags=(attach_disconnected,mediate_deleted) {
     #include <abstractions/base>
 
     # Receive signals from S6-Overlay
