@@ -18,7 +18,8 @@ RUN \
     && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
     && curl -J -L -o /tmp/otelcol-contrib.tar.gz "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v${OTELCOL}/otelcol-contrib_${OTELCOL}_linux_${ARCH}.tar.gz" \
     && tar -xzvf /tmp/otelcol-contrib.tar.gz -C /tmp \
-    && mv /tmp/otelcol-contrib /usr/bin/
+    && mv /tmp/otelcol-contrib /usr/bin/ \
+    && chmod +x /usr/bin/otelcol-contrib
 
 # Build arguments
 ARG BUILD_ARCH
