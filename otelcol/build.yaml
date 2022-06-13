@@ -1,0 +1,11 @@
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
+build_from:
+  aarch64: "ghcr.io/home-assistant/aarch64-base:3.13"
+  amd64: "ghcr.io/home-assistant/amd64-base:3.14"
+labels:
+  org.opencontainers.image.title: "Home Assistant Add-on: OpenTelemetry collector"
+  org.opencontainers.image.description: "The OpenTelemetry collector packaged for use with HomeAssistant"
+  org.opencontainers.image.source: "https://github.com/cedricziel/ha-addon-opentelemetry-collector"
+  org.opencontainers.image.licenses: "Apache License 2.0"
+args:
+  TEMPIO_VERSION: "2021.09.0"
