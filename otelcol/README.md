@@ -1,7 +1,5 @@
 # Home Assistant Add-on: OpenTelemetry collector
 
-_Example add-on to use as a blueprint for new add-ons._
-
 ![Supports aarch64 Architecture][aarch64-shield]
 ![Supports amd64 Architecture][amd64-shield]
 
