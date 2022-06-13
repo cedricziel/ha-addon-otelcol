@@ -8,10 +8,10 @@
     "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
   },
   "extensions": [
-	"timonwong.shellcheck",
-	"esbenp.prettier-vscode",
-	"DavidAnson.vscode-markdownlint"
-],
+    "timonwong.shellcheck",
+    "esbenp.prettier-vscode",
+    "DavidAnson.vscode-markdownlint"
+  ],
   "mounts": ["type=volume,target=/var/lib/docker"],
   "settings": {
     "terminal.integrated.profiles.linux": {
