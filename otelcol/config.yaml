@@ -1,3 +1,4 @@
+---
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: OpenTelemetry collector
 version: "0.2.0.53"
@@ -50,4 +51,4 @@ options:
           exporters: [logging]
 schema:
   config: "str"
-image: "ghcr.io/cedricziel/{arch}-ha-addon-otelcol"
+#image: "ghcr.io/cedricziel/{arch}-ha-addon-otelcol"
