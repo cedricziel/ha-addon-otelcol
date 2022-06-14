@@ -1,9 +1,9 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
-name: OpenTelemetry collector
+name: OpenTelemetry Collector
 version: "0.7.0.53"
 slug: otelcol
 description: Bring the OpenTelemetry collector into your home
-url: "https://github.com/cedricziel/ha-addon-opentelemetry-collector"
+url: "https://github.com/cedricziel/ha-addon-opentelemetry"
 ports:
   4317/tcp: 4317
   4318/tcp: 4318
