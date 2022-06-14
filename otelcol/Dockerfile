@@ -4,8 +4,6 @@ FROM ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-colle
 
 FROM scratch as container
 
-RUN mkdir /amd64 /aarch64
-
 COPY --from=otelcol-amd64 /otelcol-contrib /amd64/
 COPY --from=otelcol-arm64 /otelcol-contrib /aarch64/
 
