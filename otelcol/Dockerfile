@@ -1,3 +1,5 @@
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/aarch64:6.0.0
+
 FROM ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:0.53.0-amd64 as otelcol-amd64
 
 FROM ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:0.53.0-arm64 as otelcol-arm64
@@ -8,7 +10,6 @@ COPY --from=otelcol-amd64 /otelcol-contrib /amd64/
 COPY --from=otelcol-arm64 /otelcol-contrib /aarch64/
 
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/aarch64:6.0.0
 FROM $BUILD_FROM
 
 # Execute during the build of the image
