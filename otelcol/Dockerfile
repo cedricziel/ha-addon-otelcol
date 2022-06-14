@@ -1,3 +1,14 @@
+FROM ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:0.53.0-amd64 as otelcol-amd64
+
+FROM ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:0.53.0-arm64 as otelcol-arm64
+
+FROM scratch as container
+
+RUN mkdir /amd64 /aarch64
+
+COPY --from=otelcol-amd64 /otelcol-contrib /amd64/
+COPY --from=otelcol-arm64 /otelcol-contrib /aarch64/
+
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
 ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/aarch64:6.0.0
 FROM $BUILD_FROM
@@ -11,15 +22,7 @@ RUN \
 # Copy root filesystem
 COPY rootfs /
 
-RUN \
-    OTELCOL="0.53.0" \
-    && echo "${BUILD_ARCH}" \
-    && ARCH="${BUILD_ARCH}" \
-    && if [ "${BUILD_ARCH}" = "aarch64" ]; then ARCH="arm64"; fi \
-    && curl -J -L -o /tmp/otelcol-contrib.tar.gz "https://github.com/open-telemetry/opentelemetry-collector-releases/releases/download/v${OTELCOL}/otelcol-contrib_${OTELCOL}_linux_${ARCH}.tar.gz" \
-    && tar -xzvf /tmp/otelcol-contrib.tar.gz -C /tmp \
-    && mv /tmp/otelcol-contrib /usr/bin/ \
-    && chmod +x /usr/bin/otelcol-contrib
+COPY --from=container /${BUILD_ARCH}/otelcol-contrib /usr/bin/otelcol-contrib
 
 # Build arguments
 ARG BUILD_ARCH

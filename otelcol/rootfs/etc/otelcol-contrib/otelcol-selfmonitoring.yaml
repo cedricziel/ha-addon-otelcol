@@ -13,9 +13,9 @@ exporters:
 extensions:
   health_check:
 service:
-  extensions: [health_check, pprof, zpages]
+  extensions: [health_check]
   pipelines:
-    metrics:
+    metrics/internal:
       receivers: [prometheus/internal]
       processors: [batch/internal]
       exporters: [logging/internal]
