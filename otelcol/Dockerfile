@@ -1,8 +1,8 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/aarch64:6.0.0
 
-FROM ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:0.53.0-amd64 as otelcol-amd64
+FROM ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:0.57.2-amd64 as otelcol-amd64
 
-FROM ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:0.53.0-arm64 as otelcol-arm64
+FROM ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:0.57.2-amd64 as otelcol-arm64
 
 FROM scratch as container
 
