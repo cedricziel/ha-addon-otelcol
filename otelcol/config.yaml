@@ -1,6 +1,6 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: OpenTelemetry Collector
-version: "0.9.0.53"
+version: "dev"
 slug: otelcol
 description: Bring the OpenTelemetry collector into your home
 url: "https://github.com/cedricziel/ha-addon-opentelemetry"
