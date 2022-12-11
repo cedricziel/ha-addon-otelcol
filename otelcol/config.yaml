@@ -1,5 +1,4 @@
 ---
-# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: OpenTelemetry Collector
 version: dev
 slug: otelcol
