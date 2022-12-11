@@ -9,7 +9,7 @@ FROM scratch as container
 COPY --from=otelcol-amd64 /otelcol-contrib /amd64/
 COPY --from=otelcol-arm64 /otelcol-contrib /aarch64/
 
-# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-dockerfile
+# hadolint ignore=DL3006
 FROM $BUILD_FROM
 
 # Execute during the build of the image
