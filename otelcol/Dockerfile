@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/aarch64:6.1.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/amd64:6.1.3
 
 FROM ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:0.59.0-amd64 as otelcol-amd64
 
@@ -12,10 +12,13 @@ COPY --from=otelcol-arm64 /otelcol-contrib /aarch64/
 # hadolint ignore=DL3006
 FROM $BUILD_FROM
 
+# Setup base system
+ARG BUILD_ARCH=amd64
+
 # Copy root filesystem
 COPY rootfs /
 
-COPY --from=container /${BUILD_ARCH}/otelcol-contrib /usr/bin/otelcol-contrib
+COPY --from=container "/${BUILD_ARCH}/otelcol-contrib" /usr/bin/otelcol-contrib
 
 # Build arguments
 ARG BUILD_ARCH
