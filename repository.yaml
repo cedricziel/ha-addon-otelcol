@@ -1,5 +1,0 @@
----
-# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
-name: OpenTelemetry Collector Add-On repository
-url: "https://github.com/cedricziel/ha-addon-otelcol"
-maintainer: Cedric Ziel <mail@cedric-ziel.com>
