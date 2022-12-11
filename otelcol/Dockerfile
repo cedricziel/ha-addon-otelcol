@@ -42,7 +42,7 @@ LABEL \
     org.opencontainers.image.vendor="Home Assistant OpenTelemetry Collector AddOn" \
     org.opencontainers.image.authors="Cedric Ziel <mail@cedric-ziel.com>" \
     org.opencontainers.image.licenses="Apache2 License" \
-    org.opencontainers.image.url="https://github.com/cedricziel/ha-addon-opentelemetry-collector" \
+    org.opencontainers.image.url="https://github.com/cedricziel/ha-addon-otelcol" \
     org.opencontainers.image.source="https://github.com/${BUILD_REPOSITORY}" \
     org.opencontainers.image.documentation="https://github.com/${BUILD_REPOSITORY}/blob/main/README.md" \
     org.opencontainers.image.created=${BUILD_DATE} \

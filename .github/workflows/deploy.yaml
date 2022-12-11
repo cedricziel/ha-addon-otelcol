@@ -15,7 +15,7 @@ on:
 jobs:
   workflows:
     uses: cedricziel/workflows/.github/workflows/addon-deploy.yaml@patch-1
-    inputs:
+    with:
       repository: ha-addons
       repository_beta: ha-addons-beta
       repository_edge: ha-addons-edge
