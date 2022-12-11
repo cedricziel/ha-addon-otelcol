@@ -8,8 +8,6 @@ labels:
   org.opencontainers.image.description: "The OpenTelemetry collector packaged for use with HomeAssistant"
   org.opencontainers.image.source: "https://github.com/cedricziel/ha-addon-opentelemetry-collector"
   org.opencontainers.image.licenses: "Apache License 2.0"
-args:
-  TEMPIO_VERSION: "2021.09.0"
 codenotary:
   base_image: mail@cedric-ziel.com
   signer: mail@cedric-ziel.com
