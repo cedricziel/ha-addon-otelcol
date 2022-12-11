@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/aarch64:6.0.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/debian-base/aarch64:6.1.3
 
 FROM ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:0.59.0-amd64 as otelcol-amd64
 
