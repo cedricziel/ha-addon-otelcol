@@ -14,7 +14,7 @@ on:
 
 jobs:
   workflows:
-    uses: 'cedricziel/workflows/.github/workflows/addon-deploy.yaml@patch-1'
+    uses: "cedricziel/workflows/.github/workflows/addon-deploy.yaml@patch-1"
     with:
       repository: ha-addons
       repository_beta: ha-addons-beta
