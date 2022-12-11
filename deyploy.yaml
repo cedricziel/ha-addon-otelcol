@@ -1,0 +1,24 @@
+---
+name: Deploy
+
+# yamllint disable-line rule:truthy
+on:
+  release:
+    types:
+      - published
+  workflow_run:
+    workflows: ["CI"]
+    branches: [main]
+    types:
+      - completed
+
+jobs:
+  workflows:
+    uses: cedricziel/workflows/.github/workflows/addon-deploy.yaml@patch-1
+    inputs:
+      repository: ha-addons
+      repository_beta: ha-addons-beta
+      repository_edge: ha-addons-edge
+    secrets:
+      CAS_API_KEY: ${{ secrets.CAS_API_KEY }}
+      DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
