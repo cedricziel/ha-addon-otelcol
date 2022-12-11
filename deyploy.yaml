@@ -14,7 +14,11 @@ on:
 
 jobs:
   workflows:
-    uses: hassio-addons/workflows/.github/workflows/addon-deploy.yaml@main
+    uses: cedricziel/workflows/.github/workflows/addon-deploy.yaml@patch-1
+    inputs:
+      repository: ha-addons
+      repository_beta: ha-addons-beta
+      repository_edge: ha-addons-edge
     secrets:
       CAS_API_KEY: ${{ secrets.CAS_API_KEY }}
       DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
