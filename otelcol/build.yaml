@@ -10,3 +10,6 @@ labels:
   org.opencontainers.image.licenses: "Apache License 2.0"
 args:
   TEMPIO_VERSION: "2021.09.0"
+codenotary:
+  base_image: mail@cedric-ziel.com
+  signer: mail@cedric-ziel.com
