@@ -17,7 +17,6 @@ init: false
 map:
   - share:rw
   - config:rw
-watchdog: http://[HOST]:13133/
 apparmor: false
 options:
   config: |

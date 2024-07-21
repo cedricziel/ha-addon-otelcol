@@ -4,6 +4,8 @@ FROM ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-colle
 
 FROM ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:0.103.0-arm64 as otelcol-arm64
 
+FROM ghcr.io/tarampampam/curl:8.6.0 as curl
+
 FROM scratch as container
 
 COPY --from=otelcol-amd64 /otelcol-contrib /amd64/
@@ -19,6 +21,8 @@ ARG BUILD_ARCH=amd64
 COPY rootfs /
 
 COPY --from=container "/${BUILD_ARCH}/otelcol-contrib" /usr/bin/otelcol-contrib
+
+COPY --from=curl /bin/curl /bin/curl
 
 # Build arguments
 ARG BUILD_ARCH
@@ -48,3 +52,6 @@ LABEL \
     org.opencontainers.image.created=${BUILD_DATE} \
     org.opencontainers.image.revision=${BUILD_REF} \
     org.opencontainers.image.version=${BUILD_VERSION}
+
+HEALTHCHECK --interval=5m --timeout=3s \
+    CMD curl -f http://localhost:13133/ || exit 1
