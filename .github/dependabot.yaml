@@ -5,7 +5,11 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    assignees:
+      - cedricziel
   - package-ecosystem: "docker"
     directory: "/otelcol"
     schedule:
       interval: "daily"
+    assignees:
+      - cedricziel
