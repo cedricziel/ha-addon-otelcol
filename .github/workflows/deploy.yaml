@@ -16,6 +16,7 @@ jobs:
   workflows:
     uses: hassio-addons/workflows/.github/workflows/addon-deploy.yaml@main
     with:
+      slug: "ha-addon-otelcol"
       repository: ha-addons
       repository_beta: ha-addons-beta
       repository_edge: ha-addons-edge
