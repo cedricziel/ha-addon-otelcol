@@ -15,8 +15,8 @@ arch:
   - amd64
 init: false
 map:
+  - homeassistant_config:rw
   - share:rw
-  - config:rw
 apparmor: false
 options:
   config: |
